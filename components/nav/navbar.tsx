@@ -1,7 +1,7 @@
 import { IconHome } from "@/components/icons/icon-home";
 import { IconCart } from "@/components/icons/icon-cart"
 import { IconUser } from "@/components/icons/icon-user";
-import { IconWallet } from "@/components/icons/icon-wallet";
+import { FavoriteIcon } from "@/components/icons/icon-favorite";
 import Link from "next/link";
 
 export function Navbar () {
@@ -10,13 +10,13 @@ export function Navbar () {
       <Link href="/">
         <IconHome />  
       </Link>  
-      <Link href="/">
-        <IconWallet />
+      <Link href="/create-route">
+        <FavoriteIcon />
       </Link>
-      <Link href="/">
+      <Link href="/my-route">
         <IconCart />
       </Link>
-      <Link href="/">
+      <Link href="/login">
         <IconUser />
       </Link>
     </nav>

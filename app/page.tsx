@@ -3,7 +3,7 @@ import { Header } from "@/components/header/header";
 import Image from "next/image";
 import map from "@/app/assets/images/map.webp"
 import { SectionHeading } from "@/components/header/section-heading";
-import { Navbar } from "@/components/nav/navbar";
+import styles from "@/app/slider.module.css"
 
 export default function Home() {
   return (
@@ -21,16 +21,38 @@ export default function Home() {
           priority
           className="my-6"
         />
-        <section>
+        <section className="">
           <SectionHeading name="Recomendaciones para ti" />
+          <div className={`grid grid-flow-col scroll-auto
+          gap-[1.2rem] overflow-y-auto overscroll-x-contain
+          snap-mandatory my-4 ${styles.slider}`}>
+            <article className="w-[130px] min-h-[150px] 
+          bg-slate-300 rounded-xl">
+              <Image src={map} alt="Map" width={180} height={20} priority />
+              <div className="p-2">
+                <p>Aceite de oliva ecologico</p>
+                <small>Titulcia</small>
+              </div>
+            </article>
+            <article className="w-[130px] min-h-[150px] 
+          bg-slate-300 rounded-xl">
+              <Image src={map} alt="Map" width={180} height={20} priority />
+              <div className="p-2">
+                <p>Aceite de oliva ecologico</p>
+                <small>Titulcia</small>
+              </div>
+            </article>
+            <article className="w-[130px] min-h-[150px] 
+          bg-slate-300 rounded-xl">
+              <Image src={map} alt="Map" width={180} height={20} priority />
+              <div className="p-2">
+                <p>Aceite de oliva ecologico</p>
+                <small>Titulcia</small>
+              </div>
+            </article>
+          </div>
         </section>
       </main>
-      <footer 
-        className="fixed bottom-4 p-2 bg-green-800 left-6 right-6 
-        rounded-xl shadow-xl text-white"
-      >
-        <Navbar />
-      </footer>
     </>
   );
 }

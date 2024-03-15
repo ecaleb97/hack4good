@@ -7,7 +7,7 @@ interface SectionHeadingProps {
 export function SectionHeading ({ name }: SectionHeadingProps) {
   return (
     <h2 
-      className={`text-xl font- font-semibold text-[#424b54] ${raleway.className}`}
+      className={`text-xl font-semibold text-[#424b54] ${raleway.className}`}
     >
       {name}
     </h2>
