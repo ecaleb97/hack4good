@@ -1,58 +1,45 @@
-import { Search } from "@/components/search/search";
-import { Header } from "@/components/header/header";
+import mainImage from "@/app/assets/images/gallinitas.webp";
 import Image from "next/image";
-import map from "@/app/assets/images/map.webp"
-import { SectionHeading } from "@/components/header/section-heading";
-import styles from "@/app/slider.module.css"
+import { raleway } from "@/components/ui/fonts";
+import logo from "@/app/assets/images/logo.webp"
+import Link from "next/link";
 
-export default function Home() {
+export default function Presentation() {
   return (
-    <>
-      <Header />
-      <main className="p-6">
-        <div className="w-full">
-          <Search />
-        </div>
-        <Image 
-          src={map} 
-          alt="Map" 
-          width={500} 
-          height={250}
-          priority
-          className="my-6"
-        />
-        <section className="">
-          <SectionHeading name="Recomendaciones para ti" />
-          <div className={`grid grid-flow-col scroll-auto
-          gap-[1.2rem] overflow-y-auto overscroll-x-contain
-          snap-mandatory my-4 ${styles.slider}`}>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-          </div>
-        </section>
-      </main>
-    </>
-  );
+    <div className="min-h-screen w-full
+    z-50">
+      <Image 
+        src={logo} 
+        alt="We grow"
+        width={200}
+        height={200}
+        className="object-cover aspect-[200 / 81]
+        pl-6 pt-6"
+      />
+      <Image
+        src={mainImage}
+        alt="Gallinitas"
+        className="object-cover"
+        priority
+      />
+      <h1 className={`text-3xl text-[#424B54]
+      ${raleway.className} font-semibold p-6`}>
+        Encuentra tu próximo destino
+        gastrónimo en la tranquilidad del campo.
+      </h1>
+      <p className={`${raleway.className} font-light
+      px-6`}>
+        Compra productos frescos y descubre
+        todo lo que el mundo rural tiene para ti.
+      </p>
+      <div className="bg-[#DB514A] mx-6 text-center
+      py-2 mt-6 mb-[80px] rounded-lg">
+        <Link href="/menu" className={`
+        text-center text-[#FEFEFE] ${raleway.className}
+        font-semibold`}>
+        Empieza a explorar
+        </Link>
+      </div>
+    </div>
+  )
 }
