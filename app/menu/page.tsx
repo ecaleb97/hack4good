@@ -3,6 +3,7 @@ import { Header } from "@/components/header/header";
 import Image from "next/image";
 import map from "@/app/assets/images/map.webp"
 import { SectionHeading } from "@/components/header/section-heading";
+import { Footer } from "@/components/footer/footer";
 import styles from "@/app/slider.module.css"
 
 export default function Home() {
@@ -53,6 +54,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

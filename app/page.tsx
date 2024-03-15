@@ -16,12 +16,15 @@ export default function Presentation() {
         className="object-cover aspect-[200 / 81]
         pl-6 pt-6"
       />
-      <Image
-        src={mainImage}
-        alt="Gallinitas"
-        className="object-cover"
-        priority
-      />
+      <div className="flex justify-center mx-4 mt-6">
+        <Image
+          src={mainImage}
+          alt="Gallinitas"
+          className="object-cover"
+          priority
+        />
+      </div>
+      
       <h1 className={`text-3xl text-[#424B54]
       ${raleway.className} font-semibold p-6`}>
         Encuentra tu próximo destino
@@ -33,10 +36,10 @@ export default function Presentation() {
         todo lo que el mundo rural tiene para ti.
       </p>
       <div className="bg-[#DB514A] mx-6 text-center
-      py-2 mt-6 mb-[80px] rounded-lg">
+      py-2 my-6 rounded-lg">
         <Link href="/menu" className={`
         text-center text-[#FEFEFE] ${raleway.className}
-        font-semibold`}>
+        font-semibold mb-20`}>
         Empieza a explorar
         </Link>
       </div>

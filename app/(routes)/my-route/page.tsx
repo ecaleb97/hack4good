@@ -3,6 +3,7 @@ import { Card } from "@/components/card/card"
 import { ClockIcon } from "@/components/icons/icon-time"
 import { FlagIcon } from "@/components/icons/icon-flag"
 import { MiniCard } from "@/components/card/mini-card"
+import { Footer } from "@/components/footer/footer"
 
 export default function CreateRoute () {
   return (
@@ -48,6 +49,7 @@ export default function CreateRoute () {
         <MiniCard message="Rutas anteriores" />
         <MiniCard message="Rutas guardadas" />
       </div>
+      <Footer />
     </div>
   )
 }

@@ -8,7 +8,7 @@ interface RouteProps {
 export default function RouteLayout ({ children }: RouteProps) {
   return (
     <div className="p-6">
-      <Link href="/">
+      <Link href="/menu">
         <IconBack />
       </Link>
       <main className="">

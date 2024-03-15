@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer/footer"
 import { raleway } from "@/components/ui/fonts"
 
 export default function MyRoute () {
@@ -8,7 +9,7 @@ export default function MyRoute () {
       >
         Crea tu ruta personalizada
       </h3>
-
+      <Footer />
     </div>
   )
 }
