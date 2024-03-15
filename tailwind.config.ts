@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "cheese": "url(/cheese.webp)",
+        "horse": "url(/horse.webp)",
+        "castle": "url(/castle.webp)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
