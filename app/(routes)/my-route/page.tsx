@@ -44,7 +44,7 @@ export default function CreateRoute () {
         className="bg-castle bg-no-repeat bg-cover"
       />
 
-      <div className="flex justify-around mb-10">
+      <div className="flex justify-around mb-20">
         <MiniCard message="Rutas anteriores" />
         <MiniCard message="Rutas guardadas" />
       </div>
