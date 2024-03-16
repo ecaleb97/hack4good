@@ -20,17 +20,17 @@ export default function Presentation() {
         <Image
           src={mainImage}
           alt="Gallinitas"
-          className="object-cover"
+          className="object-cover max-w-[350px]"
           priority
         />
       </div>
       
-      <h1 className={`text-3xl text-[#424B54]
+      <h1 className={`text-2xl text-[#424B54]
       ${raleway.className} font-semibold p-6`}>
         Encuentra tu próximo destino
-        gastrónimo en la tranquilidad del campo.
+        gastrónomico en la tranquilidad del campo.
       </h1>
-      <p className={`${raleway.className} font-light
+      <p className={`${raleway.className} text-[14px] font-light
       px-6`}>
         Compra productos frescos y descubre
         todo lo que el mundo rural tiene para ti.

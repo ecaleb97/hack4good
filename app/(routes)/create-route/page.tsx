@@ -1,7 +1,5 @@
 import { Footer } from "@/components/footer/footer"
 import { raleway } from "@/components/ui/fonts"
-import Image from "next/image"
-import map2 from "@/app/assets/images/map2.png"
 import { Search } from "@/components/search/search"
 import { MiniCard } from "@/components/card/mini-card"
 import MapComponent from "@/components/map/Map"
