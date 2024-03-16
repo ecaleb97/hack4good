@@ -2,9 +2,10 @@ import { Search } from "@/components/search/search";
 import { Header } from "@/components/header/header";
 import Image from "next/image";
 import map from "@/app/assets/images/map.webp"
-import { SectionHeading } from "@/components/header/section-heading";
 import { Footer } from "@/components/footer/footer";
-import styles from "@/app/slider.module.css"
+import { Huerto } from "@/components/huerto/huerto";
+import { Foryou } from "@/components/foryou/for-you";
+import { Milk } from "@/components/milk/milk";
 
 export default function Home() {
   return (
@@ -22,37 +23,9 @@ export default function Home() {
           priority
           className="my-6"
         />
-        <section className="">
-          <SectionHeading name="Recomendaciones para ti" />
-          <div className={`grid grid-flow-col scroll-auto
-          gap-[1.2rem] overflow-y-auto overscroll-x-contain
-          snap-mandatory my-4 ${styles.slider}`}>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-            <article className="w-[130px] min-h-[150px] 
-          bg-slate-300 rounded-xl">
-              <Image src={map} alt="Map" width={180} height={20} priority />
-              <div className="p-2">
-                <p>Aceite de oliva ecologico</p>
-                <small>Titulcia</small>
-              </div>
-            </article>
-          </div>
-        </section>
+        <Foryou />
+        <Huerto />
+        <Milk />
       </main>
       <Footer />
     </>

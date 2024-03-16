@@ -15,7 +15,8 @@ export default function CreateRoute () {
         description="Degustacion Gourmet de 
         Quesos en casa Ana"
         icon={<ClockIcon />}
-        className="bg-cheese bg-no-repeat bg-cover"
+        className="bg-cheese bg-no-repeat bg-cover
+        opacity-75"
       />
       <h3 
         className="text-center font-light"
@@ -34,7 +35,8 @@ export default function CreateRoute () {
         description="Recorrido en caballo por el campo en 1h"
         message="Añadir al itinerario"
         icon={<ClockIcon />}
-        className="bg-horse bg-no-repeat bg-cover"
+        className="bg-horse bg-no-repeat bg-cover
+        opacity-75"
       />
 
       <Card
