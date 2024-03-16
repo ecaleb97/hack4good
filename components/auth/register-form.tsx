@@ -114,7 +114,7 @@ export function RegisterForm () {
           <FormSuccess message={success} />
           <FormError message={error} />
           <Button type="submit" disabled={isPending}
-            className="w-full">
+            className="w-full bg-[#DC574B]">
             Create an account
           </Button>
         </form>

@@ -2,7 +2,8 @@ import { raleway } from "@/components/ui/fonts";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
-  label: string
+  label: string,
+  title?: string
 }
 
 export function Header ({ label }: HeaderProps) {
@@ -12,7 +13,7 @@ export function Header ({ label }: HeaderProps) {
       <h1 
         className={cn("text-3xl font-semibold", `${raleway.className} antialiased`)}
       >
-          Sign up
+        Autentícate
       </h1>
       <p className="text-muted-foreground text-sm">{label}</p>
     </header>
