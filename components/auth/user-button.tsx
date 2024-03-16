@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 
 import {
   DropdownMenu,
@@ -41,4 +41,4 @@ export function UserButton () {
       </DropdownMenuContent>
     </DropdownMenu>
   )
-}
+} */

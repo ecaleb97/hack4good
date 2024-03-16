@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 
 import { logout } from "@/actions/logout"
 
@@ -16,4 +16,4 @@ export function LogoutButton ({ children }: LogoutButtonProps) {
       {children}
     </span>
   )
-}
+} */
