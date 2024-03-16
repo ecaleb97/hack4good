@@ -9,7 +9,7 @@ import {
 
 const { auth } = NextAuth(authConfig)
 
-export default auth((req: GetServerSidePropsContext) => {
+export default auth((req) => {
   // req.auth
   const { nextUrl } = req
   const isLoggedIn = !!req.auth

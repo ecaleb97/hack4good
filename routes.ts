@@ -5,6 +5,9 @@
 
 export const publicRoutes = [
   "/",
+  "/menu",
+  "/my-route",
+  "/create-route",
   "/auth/new-verification",
 ]
 
