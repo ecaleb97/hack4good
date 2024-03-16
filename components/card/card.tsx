@@ -17,7 +17,7 @@ export function Card ({ className, time, description, icon, message }: CardProps
         {time}
       </span>
       <p
-        className="text-center text-balance
+        className="text-center font-bold text-balance
         text-lg p-4 text-[#fefefe] z-50"
       >
         {description}
