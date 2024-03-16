@@ -12,10 +12,10 @@ export function Navbar () {
         <IconHome />  
       </Link>  
       <Link href="/create-route">
-        <FavoriteIcon />
+        <RouteIcon />
       </Link>
       <Link href="/my-route">
-        <RouteIcon />
+        <FavoriteIcon />
       </Link>
       <Link href="/auth/register">
         <IconUser />
