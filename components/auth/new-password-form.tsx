@@ -1,4 +1,4 @@
-/* 'use client'
+'use client'
 
 import { useTransition, useState } from "react";
 import { CardWrapper } from "./card-wrapper";
@@ -86,4 +86,4 @@ export function NewPasswordForm () {
       </Form>
     </CardWrapper>
   )
-} */
+}
