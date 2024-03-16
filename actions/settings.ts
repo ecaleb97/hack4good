@@ -1,4 +1,4 @@
-'use server'
+/* 'use server'
 
 import { generateVerificationToken } from "@/data/tokens";
 import { getUserByEmail, getUserById } from "@/data/user";
@@ -63,4 +63,4 @@ export async function settings (values: z.infer<typeof SettingsSchema>) {
   })
 
   return { success: "Settings updated!" }
-}
+} */
