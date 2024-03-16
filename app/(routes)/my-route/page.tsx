@@ -40,7 +40,6 @@ export default function CreateRoute () {
           icon={<ClockIcon />}
           className="bg-horse bg-cover"
         />
-
         <Card
           time="35 min"
           description="Visita al castillo de Manzanares El Real"
