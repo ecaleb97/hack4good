@@ -1,4 +1,4 @@
-import { map, atom } from 'nanostores'
+import { atom } from 'nanostores'
 
 export const waypoints = atom<google.maps.LatLngLiteral[] | null>(null)
 export const setWaypoints = (points: google.maps.LatLngLiteral[]) => waypoints.set(points)
@@ -11,14 +11,10 @@ export const addWaypoint = (point: google.maps.LatLngLiteral) => {
   }
 }
 
-export const latlngPoints = map<google.maps.LatLngLiteral[]>([])
+export const latlngPoints = atom<google.maps.LatLngLiteral[] | null>(null)
 export const setLatlngPoints = (points: google.maps.LatLngLiteral[]) => {
   latlngPoints.set(points)
 }
-export const clearLatlngPoints = () => {
-  latlngPoints.set([])
-}
-
 export const origin = atom<google.maps.LatLngLiteral | null>(null)
 
 export const setOrigin = (point: google.maps.LatLngLiteral) => origin.set(point)

@@ -3,7 +3,7 @@
 import { APIProvider, Map, useMapsLibrary, useMap } from "@vis.gl/react-google-maps";
 import { useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import {addWaypoint, latlngPoints, origin, setLatlngPoints, setOrigin, waypoints} from "@/state/mapState";
+import {latlngPoints, setLatlngPoints, setWaypoints, waypoints} from "@/state/mapState";
 import {Search} from "@/components/search/search";
 
 const randomLatLng = [
@@ -11,20 +11,30 @@ const randomLatLng = [
   {lat: 42.605556, lng: -5.570000}
 ]
 
-async function searchNearbyPlacesFrom(query: string, location: google.maps.LatLngLiteral, map: google.maps.Map) {
+async function searchNearbyPlacesFrom(query: string, location: google.maps.LatLngLiteral[], map: google.maps.Map) {
+  const route = Array(location.length)
   const placesService = new google.maps.places.PlacesService(map);
-  const request = {
-    location,
-    radius: 1000,
-    type: query,
-    rankBy: google.maps.places.RankBy.PROMINENCE,
-  }
-  placesService.nearbySearch(request, (results, status) => {
-    if (status === "OK" && results) {
-      const place = results[0]
-      addWaypoint(place.geometry?.location?.toJSON() as google.maps.LatLngLiteral)
+  location.forEach((latlng, index) => {
+    const request = {
+      location: latlng,
+      radius: 1000,
+      type: query,
+      rankBy: google.maps.places.RankBy.PROMINENCE,
     }
+    placesService.nearbySearch(request, (results, status) => {
+      if (status === "OK" && results) {
+        const place = results[0]
+        route[index] = place.geometry?.location!.toJSON() as google.maps.LatLngLiteral
+      }
+      else {
+        route[index] = latlng
+      }
+    })
   })
+  while (route.includes(undefined)) {
+    await new Promise(resolve => setTimeout(resolve, 1000))
+  }
+  setWaypoints(route)
 }
 function drawRoute(waypoints: google.maps.LatLngLiteral[], map: google.maps.Map | null) {
   const DirectionsService = new google.maps.DirectionsService();
@@ -43,7 +53,6 @@ function drawRoute(waypoints: google.maps.LatLngLiteral[], map: google.maps.Map 
     optimizeWaypoints: true,
     travelMode: google.maps.TravelMode.DRIVING,
   }
-  console.log(request.waypoints)
   DirectionsService.route(request, (result, status) => {
     if (status === "OK") {
       DirectionsRenderer.setDirections(result);
@@ -56,13 +65,6 @@ function setRouteFromWaypoints(waypoints: google.maps.LatLngLiteral[]) {
   const request = {
     origin: waypoints[0],
     destination: waypoints[waypoints.length - 1],
-    waypoints: waypoints.slice(1, waypoints.length - 1).map(waypoint => {
-      return {
-        location: waypoint,
-        stopover: true
-      }
-    }),
-    optimizeWaypoints: true,
     travelMode: google.maps.TravelMode.DRIVING,
   }
   DirectionsService.route(request, () => {})
@@ -88,26 +90,27 @@ function MainMapComponent() {
     if (!(placesLibrary && map))
       return;
     new placesLibrary.PlacesService(map);
-    if(!$latlngPoints.length)
+    if(!$latlngPoints)
+    {
       setRouteFromWaypoints(randomLatLng)
+      return;
+    }
     else
     {
       if($waypoints)
       {
         const points = $waypoints.filter((_, i) => i % 2 === 0)
-        console.log(points)
         drawRoute(points, map)
         return;
       }
-      $latlngPoints.forEach((latlng) => {
-        searchNearbyPlacesFrom("food", latlng, map).then()
-      })
+      searchNearbyPlacesFrom("food", $latlngPoints, map).then()
     }
-  }, [placesLibrary, map, $latlngPoints, $waypoints])
+  }, [map, placesLibrary, $latlngPoints, $waypoints])
   return <></>;
 }
 export default function MapComponent() {
   /* const [apiKey, setApiKey] = useState("") */
+  /*
   const $origin = useStore(origin)
   useEffect(() => {
     const Geolocation = navigator.geolocation;
@@ -120,6 +123,7 @@ export default function MapComponent() {
     else
       setOrigin({lat: 40.416775, lng: -3.703790})
   }, [$origin]);
+   */
   /* const apiKey = process.env.API_KEY */
   // For now, we will use a hardcoded API key
   // This is not recommended for production
