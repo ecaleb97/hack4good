@@ -28,7 +28,7 @@ export default function Presentation() {
       <h1 className={`text-2xl text-[#424B54]
       ${raleway.className} font-semibold p-6`}>
         Encuentra tu próximo destino
-        gastrónomico en la tranquilidad del campo.
+        gastronómico en la tranquilidad del campo.
       </h1>
       <p className={`${raleway.className} text-[14px] font-light
       px-6`}>
