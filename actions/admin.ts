@@ -1,4 +1,4 @@
-"use server"
+/* "use server"
 
 import { currentRole } from "@/lib/auth"
 import { UserRole } from "@prisma/client"
@@ -13,4 +13,4 @@ export async function admin () {
   }
 
   return { success: "Allowed Server Action!"}
-}
+} */
