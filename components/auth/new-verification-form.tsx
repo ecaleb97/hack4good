@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 
 import { CardWrapper } from "@/components/auth/card-wrapper"
 import { BeatLoader } from "react-spinners"
@@ -52,4 +52,4 @@ export function NewVerificationForm () {
       </div>
     </CardWrapper>
   )
-}
+} */

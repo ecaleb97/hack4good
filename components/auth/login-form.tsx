@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
-import { login } from "@/actions/login";
+/* import { login } from "@/actions/login"; */
 
 export function LoginForm () {
   const searchParams = useSearchParams()
@@ -44,7 +44,7 @@ export function LoginForm () {
     setError("")
     setSuccess("")
 
-    startTransition(() => {
+    /* startTransition(() => {
       login(values) 
         .then((data) => {
           if (data?.error) {
@@ -64,7 +64,7 @@ export function LoginForm () {
         .catch(() => {
           setError("Something went wrong!")
         })
-    })
+    }) */
   }
 
   return (
