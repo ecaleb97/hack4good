@@ -11,7 +11,7 @@ export function Header () {
         className={`font-bold ${raleway.className} text-xl
         text-[#424b54]`}
       >
-        Hola, Lily
+        Hola, Pedro
       </h1>
       <div 
         className="flex items-center justify-center" 
