@@ -154,7 +154,7 @@ export function LoginForm () {
           <FormError message={error || urlError} />
           <Button type="submit" disabled={isPending}
             className="w-full bg-[#DC574B]">
-            {showTwoFactor ? "Confirm" : "Login"}
+            {showTwoFactor ? "Confirm" : "Iniciar sesión"}
           </Button>
         </form>
       </Form>
