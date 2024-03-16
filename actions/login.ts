@@ -1,4 +1,4 @@
-'use server'
+/* 'use server'
 
 import { z } from 'zod'
 import { LoginSchema } from '@/schemas'
@@ -110,4 +110,4 @@ export async function login (values: z.infer<typeof LoginSchema>) {
   }
 
   return { success: "Logged in!" }
-}
+} */

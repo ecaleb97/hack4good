@@ -1,4 +1,4 @@
-'use server'
+/* 'use server'
 
 import { NewPasswordSchema } from "@/schemas"
 import { z } from "zod"
@@ -57,4 +57,4 @@ export async function newPassword (
   })
 
   return { success: "Password updated!" }
-}
+} */

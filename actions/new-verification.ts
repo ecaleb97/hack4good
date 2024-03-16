@@ -1,4 +1,4 @@
-'use server'
+/* 'use server'
 
 import { db } from "@/lib/db"
 import { getVerificationToken } from "@/data/verification-token"
@@ -36,4 +36,4 @@ export const newVerification = async (token: string) => {
   })
 
   return { success: "Email verified!" }
-}
+} */

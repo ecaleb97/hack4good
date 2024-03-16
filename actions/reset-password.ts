@@ -1,4 +1,4 @@
-"use server"
+/* "use server"
 
 import { ForgotPasswordSchema } from "@/schemas"
 import { getUserByEmail } from "@/data/user"
@@ -28,4 +28,4 @@ export async function resetPassword (values: z.infer<typeof ForgotPasswordSchema
   await sendResetPasswordEmail(passwordResetToken.email, passwordResetToken.token)
 
   return { success: "Reset email sent!" }
-}
+} */
