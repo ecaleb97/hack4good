@@ -17,7 +17,7 @@ export function Navbar () {
       <Link href="/my-route">
         <RouteIcon />
       </Link>
-      <Link href="/login">
+      <Link href="/auth/register">
         <IconUser />
       </Link>
     </nav>
