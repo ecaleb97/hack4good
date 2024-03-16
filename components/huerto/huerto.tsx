@@ -13,7 +13,7 @@ export function Huerto () {
           gap-[1.2rem] overflow-y-auto overscroll-x-contain
           snap-mandatory my-4 ${styles.slider}`}>
         <ProductCard 
-          name="Tomate rosa de la reina"
+          name="Tomate rosa"
           image={tomato}
           origin="Cádiz"
         />

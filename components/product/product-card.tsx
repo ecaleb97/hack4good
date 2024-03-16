@@ -13,13 +13,13 @@ export function ProductCard ({
   origin
 }: ProductCardProps) {
   return (
-    <article className={`w-[120px] rounded-xl
+    <article className={`w-[140px] rounded-xl
     ${raleway.className}`}>
       <Image 
         src={image} 
         alt="Aceite de oliva" 
         className="bg-[#ECEAE1] rounded-t-2xl
-        w-[120px] h-[110px] flex justify-center"
+        w-[140px] h-[130px] flex justify-center"
         priority 
       />
       <div className="p-3 rounded-b-2xl
