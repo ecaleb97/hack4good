@@ -1,37 +1,24 @@
-import { map, atom } from 'nanostores'
-import { useMap } from "@vis.gl/react-google-maps";
-import Photo = google.maps.places.Photo;
+import { atom } from 'nanostores'
 
-type waypoint = {
-    latlng: google.maps.LatLngLiteral,
-    name: string,
-    address: string,
-    id: string
-    photos: Photo[]
-    types: string[]
-}
-type route = {
-    waypoints: waypoint[],
-    name: string,
-}
-export const route = map<route>()
+export const waypoints = atom<google.maps.LatLngLiteral[] | null>(null)
+export const setWaypoints = (points: google.maps.LatLngLiteral[]) => waypoints.set(points)
 
-export const setRoute = ({waypoints, name}: route) => {
-  route.set({waypoints, name})
+export const addWaypoint = (point: google.maps.LatLngLiteral) => {
+  if (waypoints.get() === null) {
+    waypoints.set([point])
+  } else {
+    waypoints.set([...waypoints.get()!, point])
+  }
 }
 
-export const latlngPoints = map<google.maps.LatLngLiteral[]>([])
+export const latlngPoints = atom<google.maps.LatLngLiteral[] | null>(null)
 export const setLatlngPoints = (points: google.maps.LatLngLiteral[]) => {
   latlngPoints.set(points)
 }
-export const clearLatlngPoints = () => {
-  latlngPoints.set([])
-}
+export const origin = atom<google.maps.LatLngLiteral | null>(null)
 
-export const addWaypoint = (waypoint: waypoint) => {
-  route.set({waypoints: [...route.get().waypoints, waypoint], name: route.get().name})
-}
+export const setOrigin = (point: google.maps.LatLngLiteral) => origin.set(point)
 
-export const removeWaypoint = (index: number) => {
-  route.set({waypoints: route.get().waypoints.filter((_, i) => i !== index), name: route.get().name})
-}
+export const destination = atom<google.maps.LatLngLiteral | null>(null)
+
+export const setDestination = (point: google.maps.LatLngLiteral) => destination.set(point)
