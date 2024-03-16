@@ -19,9 +19,9 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        "cheese": "url(/cheese.webp)",
-        "horse": "url(/horse.webp)",
-        "castle": "url(/castle.webp)",
+        "cheese": "url(/cheeseOpacity.png)",
+        "horse": "url(/horseOpacity.png)",
+        "castle": "url(/castleOpacity.png)",
       },
       colors: {
         border: "hsl(var(--border))",

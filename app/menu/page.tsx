@@ -1,12 +1,9 @@
 import { Search } from "@/components/search/search";
 import { Header } from "@/components/header/header";
-import Image from "next/image";
-import map from "@/app/assets/images/map.webp"
 import { Footer } from "@/components/footer/footer";
 import { Huerto } from "@/components/huerto/huerto";
 import { Foryou } from "@/components/foryou/for-you";
 import { Milk } from "@/components/milk/milk";
-import MapComponent from "@/components/map/Map";
 import { Meat } from "@/components/meat/meat";
 
 export default function Home() {
