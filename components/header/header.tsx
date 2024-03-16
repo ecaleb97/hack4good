@@ -1,4 +1,5 @@
-import { raleway } from "../ui/fonts"
+import { raleway } from "@/components/ui/fonts"
+import { NotificationIcon } from "@/components/icons/icon-notification"
 
 export function Header () {
   return (
@@ -13,8 +14,10 @@ export function Header () {
         Hola, Lily
       </h1>
       <div 
-        className="rounded-full size-8 bg-slate-500" 
-      />
+        className="flex items-center justify-center" 
+      >
+        <NotificationIcon />
+      </div>
     </header>
   )
 }
