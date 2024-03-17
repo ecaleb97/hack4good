@@ -124,10 +124,7 @@ export default function MapComponent() {
       setOrigin({lat: 40.416775, lng: -3.703790})
   }, [$origin]);
    */
-  /* const apiKey = process.env.API_KEY */
-  // For now, we will use a hardcoded API key
-  // This is not recommended for production
-  const apiKey = "AIzaSyAq38rxp32Hxk4VAFYdaNds17YPtPQa15E"
+  const apiKey = process.env.API_KEY
   return apiKey && (
     <APIProvider apiKey={apiKey}>
       <Map defaultCenter={{lat: 0, lng: 0}} defaultZoom={5} mapId="e0dd0b4f7bfe120b" style={{width: "100%", height: "100vh"}}>
